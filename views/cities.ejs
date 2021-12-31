@@ -1,0 +1,14 @@
+<%- include("template/header") %>
+<div class="fluid-container">
+  <h2 class="city-title"><%= city %> right now</h2>
+  <div class="temperature">
+    <% if(parseInt(temp) > 20){ %>
+    <i class="fas fa-temperature-high hot"></i>
+    <p class="temp-value hot"><%= temp %> <span class="meter hot">C</span></p>
+    <% } else { %>
+    <i class="fas fa-temperature-low cold"></i>
+    <p class="temp-value cold"><%= temp %> <span class="meter cold">C</span></p>
+    <% } %>
+  </div>
+</div>
+<%- include("template/footer") %>

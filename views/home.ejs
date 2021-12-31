@@ -1,0 +1,43 @@
+<%- include("template/header") %>
+<div class="form-container">
+  <form action="/home" method="post">
+    <input
+      type="text"
+      name="city"
+      autocomplete="off"
+      placeholder="What's the weather like in"
+      spellcheck="false"
+    />
+    <button class="search" type="submit">Search</button>
+  </form>
+</div>
+<div class="jumbotron content">
+  <h2>Weather in different locations</h2>
+  <div class="cards">
+    <% locations.forEach(async location => { %>
+      <% if(locationsLength <= lengthPerRows) { %>
+        <div class="card" style="width: 18rem">
+          <div class="img-holder card-img-top" />
+            <img src="http://openweathermap.org/img/wn/<%= icon[locations.indexOf(location)] %>.png" alt="Card image cap" ">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Weather in <%= location %></h5>
+            <p class="card-text"><%= weather[locations.indexOf(location)] %></p>
+            <p class="card-text"><%= temperature[locations.indexOf(location)] %>° C</p>
+            <p class="card-text">AVG : <%= maxTemp[locations.indexOf(location)] %>° C</p>
+            <a href="/cities/<%= link[locations.indexOf(location)].toLowerCase().replace(" ","-") %>" class="btn btn-see">See more</a>
+          </div>
+        </div>
+      <% } %>
+      <% locationsLength++ %>
+    <% }) %>
+  </div>
+  <form action="/more-cards" method="post">
+    <% if(lengthPerRows >= locations.length) { %>
+        <button type="submit" name="btn"  class="btn btn-see" value="less">Less locations</button>
+    <% } else { %>
+        <button type="submit" name="btn" class="btn btn-see" value="more">More locations</button>
+    <% } %>
+  </form>
+</div>
+<%- include("template/footer") %>

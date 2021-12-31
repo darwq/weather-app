@@ -1,0 +1,197 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-container {
+  max-width: 100%;
+  max-height: 17vh;
+  padding: 3% 7%;
+  background: #1a374d;
+  text-align: center;
+}
+
+input[type="text"] {
+  min-width: 350px;
+  max-width: 400px;
+  margin: 0 auto;
+  outline: none;
+  background: #406882;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-weight: 300;
+}
+::placeholder {
+  color: #fff;
+  font-weight: 300;
+}
+
+input[type="text"]:focus {
+  border-bottom: 4px solid #1e415c;
+}
+
+button.search {
+  background: none;
+  border: 2px solid #406882;
+  border-radius: 5px;
+  width: 100px;
+  padding: 10px;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.content {
+  text-align: center;
+  padding: 3% 7%;
+  background: url("/assets/Screenshot_9.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  height: auto;
+}
+
+.content h2 {
+  color: rgb(235, 232, 232);
+  font-weight: 350;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 3%;
+  justify-content: space-around;
+}
+
+.cards .card {
+  border: none;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px #303a41;
+  margin-bottom: 50px;
+}
+
+.cards .card .card-body {
+  background: #406882;
+  color: #fff;
+}
+
+.btn-see {
+  background: none;
+  color: #fff;
+  border: 2px solid #5291bb;
+  width: 200px;
+  transition: background 0.3s ease;
+  transition: background-position 1s ease;
+  background-position: left;
+  background-size: 200%;
+  background: #5291bb;
+  background: linear-gradient(to left, transparent 15%, #5291bb);
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.btn-see:hover {
+  background-position: left;
+  color: #fff;
+}
+
+.cards .card .img-holder {
+  background: #ffebcc;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .img-holder img {
+  width: 4.5rem;
+}
+
+.cards .card .card-title {
+  font-weight: 400;
+}
+
+/* CITY INFORMATION */
+
+.fluid-container {
+  padding: 0 3%;
+  height: 100vh;
+  background: #1e3442;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.fluid-container .city-title {
+  text-transform: uppercase;
+  background: #5291bb;
+  padding: 3%;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.temperature {
+  margin-right: 25%;
+  display: flex;
+}
+
+.fluid-container .fas {
+  font-size: 4.5rem;
+}
+
+.cold {
+  color: #63acdd;
+}
+
+.hot {
+  color: #ca603d;
+}
+
+.fluid-container .temp-value {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+.hot.temp-value {
+  color: #ff7f3f;
+}
+
+.cold.temp-value {
+  color: #88e0ef;
+}
+
+.fluid-container .meter {
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  input[type="text"] {
+    min-width: 225px;
+  }
+
+  .content h2 {
+    line-height: 2;
+  }
+
+  .fluid-container .fas {
+    font-size: 3.5rem;
+  }
+
+  .fluid-container .meter {
+    font-size: 2rem;
+  }
+
+  .fluid-container .temp-value {
+    font-size: 1.7rem;
+  }
+
+  .fluid-container .city-title {
+    font-size: 1.2rem;
+  }
+}
